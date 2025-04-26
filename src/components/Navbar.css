@@ -42,19 +42,25 @@
 }
 
 /* תפריט מובייל */
+/* תפריט ניווט במובייל */
 .navbar-links-mobile {
   position: absolute;
   top: 70px;
-  left: 0;
-  right: 0;
+  left: 10px;
+  right: 10px;
   background: #ffffff;
-  border-bottom: 1px solid #eee;
+  border: 2px solid #ddd; /* ✅ מסגרת אפורה עדינה */
+  border-radius: 10px; /* ✅ פינות מעוגלות */
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
   animation: fadeSlideDown 0.3s ease forwards;
+  text-align: left; /* יישור טקסט לשמאל */
+  direction: ltr; /* תפריט פתיחה משמאל לימין */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* ✅ צל עדין */
+  background-clip: padding-box; /* שיהיה נקי */
 }
 
 .navbar-links-mobile li a {
@@ -63,6 +69,8 @@
   font-weight: 600;
   font-size: 1.2rem;
 }
+
+
 
 /* כפתור ☰ */
 .menu-toggle {
