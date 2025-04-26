@@ -8,15 +8,25 @@
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid #eee;
+  direction: rtl; /* ✅ לוגו מימין ותפריט משמאל */
 }
 
-/* קישורים רגילים במחשב */
+/* לוגו */
+.navbar-logo {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #000;
+  margin-right: 1rem;
+}
+
+/* קישורים רגילים */
 .navbar-links {
   list-style: none;
   display: flex;
   gap: 2rem;
   margin: 0;
   padding: 0;
+  direction: ltr; /* ✅ כדי שהקישורים יישארו מימין לשמאל רגיל */
 }
 
 .navbar-links li a {
@@ -24,9 +34,14 @@
   color: #1a1a1a;
   font-weight: 600;
   font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
-/* קישורים במובייל */
+.navbar-links li a:hover {
+  color: #007bff;
+}
+
+/* תפריט מובייל */
 .navbar-links-mobile {
   position: absolute;
   top: 70px;
@@ -49,14 +64,14 @@
   font-size: 1.2rem;
 }
 
-/* כפתור המבורגר */
+/* כפתור ☰ */
 .menu-toggle {
   display: none;
   font-size: 2rem;
   cursor: pointer;
 }
 
-/* מופיע רק במובייל */
+/* רספונסיביות */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -67,7 +82,7 @@
   }
 }
 
-/* אפקט ירידה חלקה */
+/* אנימציה לפתיחת תפריט */
 @keyframes fadeSlideDown {
   from {
     opacity: 0;

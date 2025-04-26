@@ -10,7 +10,7 @@ function Navbar() {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
       if (window.innerWidth > 768) {
-        setIsOpen(false); // לסגור תפריט אם חוזרים למחשב
+        setIsOpen(false);
       }
     };
 
@@ -20,9 +20,10 @@ function Navbar() {
 
   return (
     <nav className="navbar">
+      {/* לוגו מימין */}
       <div className="navbar-logo">shadyweb</div>
 
-      {/* רק אם מחשב רגיל - קישורים גלויים */}
+      {/* קישורים משמאל */}
       {!isMobile && (
         <ul className="navbar-links">
           <li><Link to="/">Home</Link></li>
@@ -32,7 +33,7 @@ function Navbar() {
         </ul>
       )}
 
-      {/* אם מובייל - כפתור ☰ + תפריט נפתח */}
+      {/* תפריט המבורגר במובייל */}
       {isMobile && (
         <>
           <div className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
