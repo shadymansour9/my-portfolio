@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import cvFile from "../assets/cv.pdf";
 import "../STYLE/Resume.css";
 import ContactFooter from "../components/ContactFooter";
 
 function Resume() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="resume-container">
       {/* כותרת */}
       <h2 className="resume-title">My Resume</h2>
 
-      {/* כפתור הורדה */}
+      {/* כפתור הורדה קבוע */}
       <a href={cvFile} download="Shady_Mansour_CV.pdf" className="download-btn">
         📄 Download PDF
       </a>
@@ -39,16 +50,22 @@ function Resume() {
         </div>
       </div>
 
-      {/* תצוגת PDF */}
-      <div className="pdf-frame">
-        <iframe
-          src={cvFile}
-          width="100%"
-          height="800px"
-          title="Resume"
-          style={{ border: "none" }}
-        ></iframe>
-      </div>
+      {/* תצוגת PDF או טקסט לפי מסך */}
+      {!isMobile ? (
+        <div className="pdf-frame">
+          <iframe
+            src={cvFile}
+            width="100%"
+            height="800px"
+            title="Resume"
+            style={{ border: "none" }}
+          ></iframe>
+        </div>
+      ) : (
+        <div className="mobile-resume-message">
+          <p>📄 להורדת קורות החיים יש ללחוץ על כפתור ההורדה למעלה.</p>
+        </div>
+      )}
 
       {/* תחתית עם תמונה ואייקונים */}
       <ContactFooter />
