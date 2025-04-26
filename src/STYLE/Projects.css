@@ -1,0 +1,181 @@
+/* src/STYLE/Projects.css */
+.projects-container {
+    padding: 3rem 1rem;
+    max-width: 1300px;
+    margin: auto;
+    color: #111;
+    background-color: #f9f9f9;
+  }
+  
+  .projects-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    color: #1a1a1a;
+    position: relative;
+  }
+  
+  .projects-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background-color: #111;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-items: start;
+  }
+  
+  .project-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeSlideUp 0.7s ease forwards;
+    height: 100%;
+    position: relative;
+  }
+  
+  @keyframes fadeSlideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  }
+  
+  .project-card h2 {
+    font-size: 1.6rem;
+    color: #1c1c1c;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .project-card .read-more-btn {
+    margin-top: auto;
+    align-self: center;
+    background-color: #111;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .project-card .read-more-btn:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+  }
+  
+  .project-details {
+    display: none;
+    margin-top: 1rem;
+    animation: fadeSlideUp 0.5s ease forwards;
+  }
+  
+  .project-card.expanded .project-details {
+    display: block;
+  }
+  
+  .project-details p,
+  .project-details ul,
+  .project-details h4 {
+    text-align: left;
+  }
+  
+  .project-details ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-details ul li {
+    color: #444;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-details h4 {
+    margin-top: 1.2rem;
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #111;
+  }
+  .project-card a,
+  .project-details a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #111;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+  
+  .project-card a:hover,
+  .project-details a:hover {
+    background-color: #333;
+  }
+  .project-details video {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 1rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  .watch-video-btn {
+    background-color: #111;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1rem 0;
+    transition: background 0.3s ease;
+  }
+  
+  .watch-video-btn:hover {
+    background-color: #333;
+  }
+  .github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #111;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
+  }

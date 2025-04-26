@@ -1,0 +1,69 @@
+.resume-container {
+  padding: 3rem 1rem;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.resume-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background-color: #000000;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.download-btn:hover {
+  background-color: #000000;
+}
+
+.about-modern {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 0 auto 3rem auto;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  border: 2px solid #111; /* ✅ מסגרת שחורה */
+}
+
+.about-box {
+  width: 50%;
+  padding: 2.5rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.about-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.divider-line {
+  width: 2px;
+  background-color: #eee;
+}
+
+.pdf-frame {
+  max-width: 950px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
