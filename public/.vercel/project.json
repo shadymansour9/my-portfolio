@@ -1,5 +1,5 @@
 {
     "framework": "create-react-app",
-    "nodeVersion": "16.x"
+    "nodeVersion": "18.x"
   }
   
