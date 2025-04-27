@@ -2,10 +2,18 @@
 import React, { useState } from "react";
 import "../STYLE/VideoModal.css";
 import ParkingDemo from "../assets/ParkingDemo.mp4";
+import RMProject from "../assets/RMPROJECT.mp4";
 
 function ProjectModal({ title, content, onClose }) {
   const [showVideo, setShowVideo] = useState(false);
-  const hasVideo = title === "Parking App – Smart Parking Management";
+
+  // מיפוי בין שם פרויקט לווידאו
+  const videoSources = {
+    "Parking App – Smart Parking Management": ParkingDemo,
+    "RashaWeb – Revit and Interior Design Learning Platform": RMProject,
+  };
+
+  const videoSrc = videoSources[title]; // אם יש וידאו לפרויקט הזה
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -16,10 +24,11 @@ function ProjectModal({ title, content, onClose }) {
         <button className="close-button" onClick={onClose}>
           ← Back
         </button>
+
         <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>{title}</h2>
 
-        {/* כפתור להפעיל וידאו */}
-        {hasVideo && !showVideo && (
+        {/* כפתור לצפייה בווידאו */}
+        {videoSrc && !showVideo && (
           <button
             className="watch-video-button"
             onClick={(e) => {
@@ -27,18 +36,18 @@ function ProjectModal({ title, content, onClose }) {
               setShowVideo(true);
             }}
           >
-            ▶ Watch Video
+            ▶️ Watch Video
           </button>
         )}
 
-        {/* וידאו קטן */}
-        {hasVideo && showVideo && (
+        {/* הצגת הווידאו אם נלחץ כפתור */}
+        {videoSrc && showVideo && (
           <div className="modal-video-container">
-            <video controls src={ParkingDemo}></video>
+            <video controls src={videoSrc}></video>
           </div>
         )}
 
-        {/* תוכן הפרויקט */}
+        {/* תוכן פרויקט רגיל */}
         <div className="modal-text">{content}</div>
       </div>
     </div>
